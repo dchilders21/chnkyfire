@@ -37,7 +37,6 @@
 
     var newSize;
     var clicked = false;
-    console.log($(this))
     var $sliiider = $(this);
     var $toggle = $(settings.toggle);
     var $exit = $(settings.exit_selector);

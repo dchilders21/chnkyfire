@@ -105,6 +105,7 @@
 
 		getBackgroundPosition = (supportsBackgroundPositionXY ?
 			function($elem) {
+				console.log($elem.css('background-position-x'));
 				return [
 					$elem.css('background-position-x'),
 					$elem.css('background-position-y')
@@ -400,9 +401,11 @@
 
 				// Save/restore the original top and left CSS values in case we destroy the instance
 				if (!$this.data('stellar-backgroundStartingLeft')) {
+					console.log(backgroundPosition);
 					$this.data('stellar-backgroundStartingLeft', backgroundPosition[0]);
 					$this.data('stellar-backgroundStartingTop', backgroundPosition[1]);
 				} else {
+					console.log('else');
 					setBackgroundPosition($this, $this.data('stellar-backgroundStartingLeft'), $this.data('stellar-backgroundStartingTop'));
 				}
 
@@ -412,7 +415,7 @@
 
 				offsetLeft = $this.offset().left - marginLeft - scrollLeft;
 				offsetTop = $this.offset().top - marginTop - scrollTop;
-				
+
 				// Calculate the offset parent
 				$this.parents().each(function() {
 					var $this = $(this);
@@ -441,7 +444,7 @@
 					verticalOffset: verticalOffset,
 					startingValueLeft: backgroundPosition[0],
 					startingValueTop: backgroundPosition[1],
-					startingBackgroundPositionLeft: (isNaN(parseInt(backgroundPosition[0], 10)) ? 0 : parseInt(backgroundPosition[0], 10)),
+					//startingBackgroundPositionLeft: (isNaN(parseInt(backgroundPosition[0], 10)) ? 0 : parseInt(backgroundPosition[0], 10)),
 					startingBackgroundPositionTop: (isNaN(parseInt(backgroundPosition[1], 10)) ? 0 : parseInt(backgroundPosition[1], 10)),
 					startingPositionLeft: $this.position().left,
 					startingPositionTop: $this.position().top,
@@ -476,7 +479,6 @@
 				background = this.backgrounds[i];
 
 				background.$element.data('stellar-backgroundStartingLeft', null).data('stellar-backgroundStartingTop', null);
-
 				setBackgroundPosition(background.$element, background.startingValueLeft, background.startingValueTop);
 			}
 		},
@@ -591,7 +593,7 @@
 				fixedRatioOffset = (background.isFixed ? 0 : 1);
 				bgLeft = (this.options.horizontalScrolling ? (scrollLeft + background.horizontalOffset - this.viewportOffsetLeft - background.startingOffsetLeft + background.parentOffsetLeft - background.startingBackgroundPositionLeft) * (fixedRatioOffset - background.stellarRatio) + 'px' : background.startingValueLeft);
 				bgTop = (this.options.verticalScrolling ? (scrollTop + background.verticalOffset - this.viewportOffsetTop - background.startingOffsetTop + background.parentOffsetTop - background.startingBackgroundPositionTop) * (fixedRatioOffset - background.stellarRatio) + 'px' : background.startingValueTop);
-
+				console.log(bgLeft);
 				setBackgroundPosition(background.$element, bgLeft, bgTop);
 			}
 		},
@@ -610,7 +612,7 @@
 					ticking = true;
 				}
 			};
-			
+
 			this.$scrollElement.bind('scroll.' + this.name, requestTick);
 			requestTick();
 		},

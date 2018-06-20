@@ -2701,12 +2701,9 @@ $(document).ready(function () {
       const startY = window.$('.navbar').height();
 
       if (window.$(window).scrollTop() > startY) {
-        //window.$('.navbar').addClass('scrolled');
-          console.log('move burger to 50%');
           $( "#open-button" ).addClass('nav-floating');
           $( "#open-button" ).removeClass('nav-locked');
       } else {
-        console.log('move burger to 80%');
         $( "#open-button" ).addClass('nav-locked');
         $( "#open-button" ).removeClass('nav-floating');
       }
