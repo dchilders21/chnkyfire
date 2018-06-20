@@ -95,7 +95,7 @@ h6 {font-size:25px; line-height:30px}
 .text-medium {font-size:16px; line-height:23px}
 .text-large {font-size:18px; line-height:26px}
 .text-extra-large {font-size: 20px; line-height:26px}
-.title-large {font-size: 100px; line-height:95px}
+.title-large {font-size: 80px; line-height:95px}
 .title-extra-large {font-size: 130px; line-height:120px}
 
 /* text color */
@@ -3819,12 +3819,12 @@ header {
   position: relative;
 }
 
-.navbar-toggle {
+/*.navbar-toggle {
   position: fixed;
   left: 30px;
   top: 85%;
   z-index: 1000;
-}
+}*/
 
 .nav-floating {
   top: 50%;

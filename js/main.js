@@ -2695,7 +2695,7 @@ $(document).ready(function () {
         auto_close: false //set to true if you want the slider to auto close everytime a child link of it is clicked
     };
 
-    var navMenu = $('#sliide-test').sliiide(settings); //initialize sliiide
+    // var navMenu = $('#sliide-test').sliiide(settings); //initialize sliiide
 
     function checkScroll() {
       const startY = window.$('.navbar').height();
