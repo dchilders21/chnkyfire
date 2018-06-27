@@ -2224,10 +2224,10 @@ footer .small-icon li {margin: 0 8px;}
 
 /* header icon */
 .header-searchbar {border-left: 1px solid rgba(0,0,0,.15); padding-left: 15px; display: inline-block; line-height: 15px; position: relative; top: -1px;}
-.header-social-icon { border-left: 1px solid rgba(0, 0, 0, 0.15); padding-left: 15px; margin-left: 12px; display: inline-block; line-height: 15px; position: relative; top: -1px;}
+.header-social-icon { /* border-left: 1px solid rgba(0, 0, 0, 0.15); */ padding-left: 15px; margin-left: 12px; display: inline-block; line-height: 15px; position: relative; top: -1px;}
 .heder-menu-button {display: inline-block; line-height: 14px; padding-left: 5px; position: relative; top: -1px;}
 nav.navbar.bootsnav .heder-menu-button .navbar-toggle {float: none; padding: 0; margin-top: 0; margin-bottom: 0; top: 4px}
-.white-link .header-searchbar, .white-link .header-social-icon {border-left: 1px solid rgba(255,255,255,.15);}
+/*.white-link .header-searchbar, .white-link .header-social-icon {border-left: 1px solid rgba(255,255,255,.15);}*/
 .header-social-icon a {color: #232323}
 .header-social-icon a i, .header-searchbar a i {margin: 0 11px;}
 .header-searchbar a i { position: relative; top: -1px;}
@@ -2340,7 +2340,7 @@ header nav .navbar-nav.text-normal > li > a {font-weight: 600; font-size: 12px }
 .mobile-toggle {display: block}
 .sidebar-nav .mobile-toggle {display: none}
 .mobile-toggle span { display: block; width: 16px; height: 2px; background: #232323; content: ""; margin: 3px 0px }
-.mobile-toggle:hover span, .white-link .mobile-toggle:hover span { background-color: red}
+.mobile-toggle:hover span, .white-link .mobile-toggle:hover span { background-color: rgba(255,255,255,0.6);}
 .white-link .mobile-toggle span { background: #fff;}
 header nav .brand-logo { padding-top: 20px; padding-bottom: 20px;}
 header.sticky nav .brand-logo {padding-top: 15px; padding-bottom: 15px;}
@@ -2417,7 +2417,8 @@ header.header-appear nav.header-light-transparent, header.sticky nav.navbar-fixe
 header.header-appear nav.header-light-transparent .separator-line-verticle-small, header.header-appear nav.header-light .separator-line-verticle-small {background: rgba(0, 0, 0, 0.4) }
 header.header-appear nav.header-light-transparent .header-social-icon a, header.header-appear nav.header-light .header-social-icon a, header.header-appear nav.header-light.white-link .header-social-icon a, header.header-appear nav.header-light-transparent.white-link .header-social-icon a, header.header-appear nav.header-light-transparent.white-link .heder-menu-button a, header.header-appear nav.header-light-transparent .header-searchbar a, header.header-appear nav.header-light .header-searchbar a, header.header-appear nav.header-light.white-link .header-searchbar a, header.header-appear nav.header-light-transparent.white-link .header-searchbar a {color: #232323}
 header.header-appear nav.bootsnav.header-light-transparent .navbar-nav > li > a, header.header-appear nav.bootsnav.header-light .navbar-nav > li > a {color: #232323;}
-header.header-appear nav.header-light-transparent .header-searchbar, header.header-appear.header-light-transparent .header-social-icon, header.header-appear nav.header-light .header-searchbar, header.header-appear nav.header-light-transparent.white-link .header-social-icon, header.sticky nav.header-light-transparent .header-searchbar, header.sticky nav.header-light-transparent .header-social-icon, header.sticky nav.header-light .header-searchbar, header.sticky nav.header-light .header-social-icon {border-left: 1px solid rgba(0,0,0,0.25);}
+header.header-appear nav.navbar.bootsnav .navbar-toggle span {background-color: #232323;}
+header.header-appear nav.header-light-transparent .header-searchbar, header.header-appear.header-light-transparent .header-social-icon, header.header-appear nav.header-light .header-searchbar, header.header-appear nav.header-light-transparent.white-link .header-social-icon, header.sticky nav.header-light-transparent .header-searchbar, header.sticky nav.header-light-transparent .header-social-icon, header.sticky nav.header-light .header-searchbar, header.sticky nav.header-light .header-social-icon {/*border-left: 1px solid rgba(0,0,0,0.25);*/}
 header.header-appear nav.nav-fixed-top.header-light-transparent.white-link .navbar-nav > li > a, header.header-appear nav.nav-fixed-top.header-light-transparent.white-link .header-social-icon a, header.header-appear nav.nav-fixed-top.header-light-transparent.white-link .header-searchbar a,header.header-appear nav.nav-scroll-fixed-top.header-light-transparent.white-link .navbar-nav > li > a, header.header-appear nav.nav-scroll-fixed-top.header-light-transparent.white-link .header-social-icon a, header.header-appear nav.nav-scroll-fixed-top.header-light-transparent.white-link .header-searchbar a {color: #232323}
 header.sticky nav.header-light-transparent .heder-menu-button .mobile-toggle span,header.sticky nav.header-light .heder-menu-button .mobile-toggle span {background: #232323;}
 
@@ -3832,4 +3833,8 @@ header {
 
 .nav-locked {
   top: 85%;
+}
+
+.border-color-nutrigene-yellow {
+  border-color: #ffcf4c;
 }
