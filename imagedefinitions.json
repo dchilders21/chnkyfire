@@ -1,6 +1,6 @@
 {
   "taskDefinition": {
-    "family": "chnkyfire-defintion",
+    "family": "chnkyfire-definition",
     "containerDefinitions": [
       {
         "name": "chnkyfire-container",
