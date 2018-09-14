@@ -3618,7 +3618,10 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto }
 /* scroll to top */
 .scroll-top-arrow, .scroll-top-arrow:focus { color: #fff; background: #878787; line-height: 28px; display: none; height: 30px; width: 30px; padding: 0; position: fixed; right: 45px; text-align: center; text-decoration: none; top: 91%; z-index: 10006; border-radius: 100%;}
 .scroll-top-arrow:hover {background: #000; opacity: .8; color: #fff; border-color: #ff214f}
-.scroll-top-arrow i {line-height: 30px;  position: relative;}
+.scroll-top-arrow i, .scroll-down-arrow i { line-height: 30px;  position: relative; }
+.scroll-down-arrow, .scroll-down-arrow:focus { color: #878787; line-height: 28px; height: 30px; width: 30px; padding: 0; position: fixed; left: 50%; margin-left: -15px; text-align: center; text-decoration: none; top: 91%; z-index: 10006;}
+.scroll-down-arrow:hover {opacity: 1; color: #CE1141; }
+.scroll-down-arrow i { font-size: 24px; }
 
 .bg-dark-footer{background-color:#141414;}
 .footer-logo {max-height: 28px;}
@@ -3870,4 +3873,16 @@ header {
   font-size: 52px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+}
+
+.ad-grid {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-flow: column wrap;
+   align-content: center;
+}
+
+.ad-grid iframe {
+  margin: 20px;
 }

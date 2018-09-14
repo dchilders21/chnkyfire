@@ -383,16 +383,25 @@ $(document).ready(function () {
         }
     });
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 150)
+        if ($(this).scrollTop() > 150) {
             $('.scroll-top-arrow').fadeIn('slow');
-        else
-            $('.scroll-top-arrow').fadeOut('slow');
+            $('.scroll-down-arrow').hide();
+        } else {
+            $('.scroll-top-arrow').fadeOut('fast');
+            // $('.scroll-down-arrow').fadeIn('slow');
+        }
     });
     //Click event to scroll to top
     $(document).on('click', '.scroll-top-arrow', function () {
         $('html, body').animate({scrollTop: 0}, 800);
         return false;
     });
+
+    $(document).on('click', '.scroll-down-arrow', function () {
+        $('html, body').animate({scrollTop: 600}, 800);
+        return false;
+    });
+
 
     /* ===================================
      swiper slider
