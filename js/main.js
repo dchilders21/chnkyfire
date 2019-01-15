@@ -332,6 +332,7 @@ $(window).resize(function (event) {
     });
 
     setTimeout(function () {
+        console.log('here');
         SetResizeContent();
     }, 500);
 
@@ -347,6 +348,7 @@ $(window).resize(function (event) {
 $(document).ready(function () {
     "use strict";
 
+    console.log('start ready');
     // Bootsnav menu work with eualize height
     $("nav.navbar.bootsnav ul.nav").each(function () {
         $("li.dropdown", this).on("mouseenter", function () {
@@ -1259,99 +1261,10 @@ $(document).ready(function () {
         offset: 1
     });
 
-    /*==============================================================*/
-    //PieChart For Onepage - START CODE
-    /*==============================================================*/
-    if ($('.chart1').length > 0) {
-        $('.chart1').appear();
-        $('.chart1').easyPieChart({
-            barColor: '#929292',
-            trackColor: '#d9d9d9',
-            scaleColor: false,
-            easing: 'easeOutBounce',
-            scaleLength: 1,
-            lineCap: 'round',
-            lineWidth: 3, //12
-            size: 150, //110
-            animate: {
-                duration: 2000,
-                enabled: true
-            },
-            onStep: function (from, to, percent) {
-                $(this.el).find('.percent').text(Math.round(percent));
-            }
-        });
-        $(document.body).on('appear', '.chart1', function (e) {
-            // this code is executed for each appeared element
-            if (!$(this).hasClass('appear')) {
-                $(this).addClass('appear');
-                $(this).data('easyPieChart').update(0).update($(this).data('percent'));
-            }
-        });
-    }
-
-    if ($('.chart2').length > 0) {
-        $('.chart2').appear();
-        $('.chart2').easyPieChart({
-            easing: 'easeOutCirc',
-            barColor: '#ff214f',
-            trackColor: '#c7c7c7',
-            scaleColor: false,
-            scaleLength: 1,
-            lineCap: 'round',
-            lineWidth: 2, //12
-            size: 120, //110
-            animate: {
-                duration: 2000,
-                enabled: true
-            },
-            onStep: function (from, to, percent) {
-                $(this.el).find('.percent').text(Math.round(percent));
-            }
-        });
-        $(document.body).on('appear', '.chart2', function (e) {
-            // this code is executed for each appeared element
-            if (!$(this).hasClass('appear')) {
-                $(this).addClass('appear');
-                $(this).data('easyPieChart').update(0).update($(this).data('percent'));
-            }
-        });
-    }
-
-    if ($('.chart3').length > 0) {
-        $('.chart3').appear();
-        $('.chart3').easyPieChart({
-            easing: 'easeOutCirc',
-            barColor: '#ff214f',
-            trackColor: '',
-            scaleColor: false,
-            scaleLength: 1,
-            lineCap: 'round',
-            lineWidth: 3, //12
-            size: 140, //110
-            animate: {
-                duration: 2000,
-                enabled: true
-            },
-            onStep: function (from, to, percent) {
-                $(this.el).find('.percent').text(Math.round(percent));
-            }
-        });
-        $(document.body).on('appear', '.chart3', function (e) {
-            // this code is executed for each appeared element
-            if (!$(this).hasClass('appear')) {
-                $(this).addClass('appear');
-                $(this).data('easyPieChart').update(0).update($(this).data('percent'));
-            }
-        });
-    }
-    /*==============================================================*/
-    //PieChart For Onepage - END CODE
-    /*==============================================================*/
-
     /*==============================================================
      portfolio filter
      ==============================================================*/
+     console.log('calling isotope');
     var $portfolio_filter = $('.portfolio-grid');
     $portfolio_filter.imagesLoaded(function () {
         $portfolio_filter.isotope({
@@ -1364,8 +1277,10 @@ $(document).ready(function () {
         });
         $portfolio_filter.isotope();
     });
+
     var $grid_selectors = $('.portfolio-filter > li > a');
     $grid_selectors.on('click', function () {
+        console.log('here');
         $grid_selectors.parent().removeClass('active');
         $(this).parent().addClass('active');
         var selector = $(this).attr('data-filter');
@@ -1381,7 +1296,9 @@ $(document).ready(function () {
         $portfolio_filter.isotope({filter: selector});
         return false;
     });
+
     $(window).resize(function () {
+        console.log('resizing');
         if (!isMobile && !isiPhoneiPad) {
             $portfolio_filter.imagesLoaded(function () {
                 setTimeout(function () {
@@ -1391,6 +1308,7 @@ $(document).ready(function () {
             });
         }
     });
+    
     var $blog_filter = $('.blog-grid');
     $blog_filter.imagesLoaded(function () {
         $blog_filter.isotope({
@@ -2732,6 +2650,7 @@ $(document).ready(function () {
  START Page Load
  ====================================== */
 $(window).load(function () {
+    console.log('start page load');
     var hash = window.location.hash.substr(1);
     if (hash != "") {
         setTimeout(function () {
@@ -2752,7 +2671,11 @@ $(window).load(function () {
         }, 500);
     }
 
+    // Recall this to be sure the grids is aligned properly
+    $('.portfolio-grid').isotope();
+    
     fullScreenHeight();
+    //SetResizeContent();
 });
 /* ===================================
  END Page Load
